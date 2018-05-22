@@ -1,5 +1,6 @@
 import sys
 
+
 class Vertex:
 
     def __init__(self, title):
