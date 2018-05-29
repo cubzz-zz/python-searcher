@@ -28,20 +28,31 @@ class Graph:
         else:
             raise TypeError("Must be an Edge")
 
-    def add_edge(self, v1: Vertex, v2: Vertex):
-        pass
-
     def contains_vertex(self, v):
-        for ve in self._vertices:
-            if v == ve:
-                return True
-        return False
+        if not isinstance(v, Vertex):
+            raise TypeError("contains_vertex argument must be a Vertex")
+        return v in self._vertices
 
     def contains_edge(self, e):
-        pass
+        if not isinstance(e, Edge):
+            raise TypeError("contains_edge argument must be an Edge")
+        return e in self._edges
 
-    def contains_edge(self, v1, v2):
-        pass
+    # def contains_edge(self, v1: Vertex, v2: Vertex) -> bool:
+    #     if not isinstance(v1, Vertex) or not isinstance(v2, Vertex):
+    #         raise TypeError("Inputs must be vertices")
+    #     for e in self._edges:
+    #         if v1 in e.endpoints and v2 in e.endpoints:
+    #             return True
+    #     return False
 
-    def get_neighbors(self):
-        pass
+    def get_neighbors(self, v):
+        if not isinstance(v, Vertex):
+            raise TypeError("can only get neighbors of a Vertex")
+        output = []
+        for e in self._edges:
+            if v in e.endpoints:
+                for en in e.endpoints:
+                    if en is not v:
+                        output.append(en)
+        return output
