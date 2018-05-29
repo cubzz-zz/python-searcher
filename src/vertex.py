@@ -42,3 +42,10 @@ class Vertex:
         if not isinstance(val, bool):
             raise TypeError("value of visited must be a boolean")
         self._visited = val
+
+    def __str__(self):
+        return "Vertex: {}, Distance: {}, Previous: {}, Visited: {}".format(self._title, self._distance, self._previous.title
+                                                                           , self._visited)
+
+    def __repr__(self):
+        return "vertex.Vertex('{}')".format(self._title)
