@@ -19,6 +19,8 @@ class Vertex:
 
     @previous.setter
     def previous(self, val):
+        if not isinstance(val, Vertex):
+            raise TypeError("value of Previous must be a Vertex")
         self._previous = val
 
     @property
@@ -27,6 +29,8 @@ class Vertex:
 
     @distance.setter
     def distance(self, val):
+        if not isinstance(val, int):
+            raise TypeError("value of distance must be an integer")
         self._distance = val
 
     @property
@@ -35,4 +39,6 @@ class Vertex:
 
     @visited.setter
     def visited(self, val):
+        if not isinstance(val, bool):
+            raise TypeError("value of visited must be a boolean")
         self._visited = val

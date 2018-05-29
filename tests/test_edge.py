@@ -18,3 +18,5 @@ class TestEdge(unittest.TestCase):
     def test_properties(self):
         self.assertEqual(self.e1.endpoints[0], self.v1)
         self.assertEqual(self.e1.endpoints[1], self.v2)
+        with self.assertRaises(TypeError):
+            self.e2 = Edge('3', 3)

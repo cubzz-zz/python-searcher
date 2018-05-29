@@ -32,6 +32,8 @@ class TestVertex(unittest.TestCase):
         self.assertEqual(self.v3.visited, False)
 
     def test_setters(self):
+        with self.assertRaises(TypeError):
+            self.v1.distance = 'x'
         self.v1.distance = 3
         self.v2.distance = 400
         self.v3.distance = 649000
@@ -40,6 +42,8 @@ class TestVertex(unittest.TestCase):
         self.assertEqual(self.v2.distance, 400)
         self.assertEqual(self.v3.distance, 649000)
 
+        with self.assertRaises(TypeError):
+            self.v2.previous = 'v1'
         self.v1.previous = self.v2
         self.v2.previous = self.v3
         self.v3.previous = self.v1
@@ -48,6 +52,8 @@ class TestVertex(unittest.TestCase):
         self.assertEqual(self.v2.previous, self.v3)
         self.assertEqual(self.v3.previous, self.v1)
 
+        with self.assertRaises(TypeError):
+            self.v3.visited = 'x'
         self.v1.visited = True
         self.v2.visited = True
         self.v3.visited = True

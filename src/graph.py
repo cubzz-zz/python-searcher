@@ -20,13 +20,13 @@ class Graph:
         if isinstance(v, Vertex):
             self._vertices.append(v)
         else:
-            print("must add a vertex")
+            raise TypeError("Must be a Vertex")
 
     def add_edge(self, e: Edge):
         if isinstance(e, Edge):
             self._edges.append(e)
         else:
-            print("must add an Edge")
+            raise TypeError("Must be an Edge")
 
     def add_edge(self, v1: Vertex, v2: Vertex):
         pass
