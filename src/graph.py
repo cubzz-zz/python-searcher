@@ -38,7 +38,7 @@ class Graph:
             raise TypeError("contains_edge argument must be an Edge")
         return e in self._edges
 
-    def contains_edge(self, v1, v2):
+    def contains_edge(self, v1: Vertex, v2: Vertex) -> bool:
         if not isinstance(v1, Vertex) or not isinstance(v2, Vertex):
             raise TypeError("Inputs must be vertices")
         for e in self._edges:
