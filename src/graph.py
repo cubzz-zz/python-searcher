@@ -54,3 +54,8 @@ class Graph:
                     if en is not v:
                         output.append(en)
         return output
+
+    def get_edge(self, v: Vertex, v2: Vertex) -> Edge:
+        for e in self.edges:
+            if v in e.endpoints and v2 in e.endpoints:
+                return e

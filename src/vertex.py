@@ -19,7 +19,7 @@ class Vertex:
 
     @previous.setter
     def previous(self, val):
-        if not isinstance(val, Vertex):
+        if not isinstance(val, Vertex) and val is not None:
             raise TypeError("value of Previous must be a Vertex")
         self._previous = val
 
@@ -44,8 +44,8 @@ class Vertex:
         self._visited = val
 
     def __str__(self):
-        return "Vertex: {}, Distance: {}, Previous: {}, Visited: {}".format(self._title, self._distance, self._previous.title
-                                                                           , self._visited)
+        return "Vertex: {}, Distance: {}, Previous: {}, Visited: {}\n".format(self._title, self._distance,
+                                                                              self._previous.title, self._visited)
 
     def __repr__(self):
         return "vertex.Vertex('{}')".format(self._title)
