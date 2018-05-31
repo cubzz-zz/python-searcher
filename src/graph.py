@@ -33,18 +33,26 @@ class Graph:
             raise TypeError("contains_vertex argument must be a Vertex")
         return v in self._vertices
 
-    def contains_edge(self, e):
-        if not isinstance(e, Edge):
-            raise TypeError("contains_edge argument must be an Edge")
-        return e in self._edges
+    def contains_edge(self, edge=None, vertex1=None, vertex2=None):
+        if edge is None and (vertex1 is None or vertex2 is None):
+            raise TypeError("usage of contains edge is either with an edge or 2 vertices")
+        if edge is None:
+            for e in self._edges:
+                if vertex1 in e.endpoints and vertex2 in e.endpoints:
+                    return True
+            return False
+        else:
+            return edge in self._edges
 
-    # def contains_edge(self, v1: Vertex, v2: Vertex) -> bool:
-    #     if not isinstance(v1, Vertex) or not isinstance(v2, Vertex):
-    #         raise TypeError("Inputs must be vertices")
-    #     for e in self._edges:
-    #         if v1 in e.endpoints and v2 in e.endpoints:
-    #             return True
-    #     return False
+        return edge in self._edges
+
+    def contains_edge(self, v1: Vertex, v2: Vertex) -> bool:
+        if not isinstance(v1, Vertex) or not isinstance(v2, Vertex):
+            raise TypeError("Inputs must be vertices")
+        for e in self._edges:
+            if v1 in e.endpoints and v2 in e.endpoints:
+                return True
+        return False
 
     def get_neighbors(self, v):
         if not isinstance(v, Vertex):
