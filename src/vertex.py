@@ -48,4 +48,4 @@ class Vertex:
                                                                               self._previous.title, self._visited)
 
     def __repr__(self):
-        return "vertex.Vertex('{}')".format(self._title)
+        return "Vertex('{}')".format(self._title)

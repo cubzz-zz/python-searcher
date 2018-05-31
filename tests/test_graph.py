@@ -57,3 +57,9 @@ class TestGraph(unittest.TestCase):
         self.assertEqual(self.g.get_neighbors(self.v2), [self.v1, self.v4])
         self.assertEqual(self.g.get_neighbors(self.v3), [self.v1, self.v4])
         self.assertEqual(self.g.get_neighbors(self.v4), [self.v3, self.v2])
+
+    def test_from_file(self):
+        self.g2 = Graph()
+        self.g2.read_from_file('graph.txt')
+        print(self.g2.vertices)
+        print(self.g2.edges)

@@ -59,3 +59,10 @@ class Graph:
         for e in self.edges:
             if v in e.endpoints and v2 in e.endpoints:
                 return e
+
+    def read_from_file(self, filename):
+        f = open('C:\\Users\\benle\\PycharmProjects\\Searcher\\' + filename, 'r')
+        for line in f:
+            print(line[3])
+            self.add_edge(Edge(Vertex(line[1]), Vertex(line[2]), int(line[3])))
+        f.close()

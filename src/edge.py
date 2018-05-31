@@ -18,3 +18,7 @@ class Edge:
     @property
     def weight(self):
         return self._weight
+
+    def __repr__(self):
+        return "Edge(Vertex('{}'), Vertex('{}'), {})".format(self._endpoints[0].title, self._endpoints[1].title,
+                                                             str(self._weight))
