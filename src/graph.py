@@ -44,16 +44,6 @@ class Graph:
         else:
             return edge in self._edges
 
-        return edge in self._edges
-
-    def contains_edge(self, v1: Vertex, v2: Vertex) -> bool:
-        if not isinstance(v1, Vertex) or not isinstance(v2, Vertex):
-            raise TypeError("Inputs must be vertices")
-        for e in self._edges:
-            if v1 in e.endpoints and v2 in e.endpoints:
-                return True
-        return False
-
     def get_neighbors(self, v):
         if not isinstance(v, Vertex):
             raise TypeError("can only get neighbors of a Vertex")

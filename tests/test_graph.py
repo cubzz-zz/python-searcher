@@ -50,7 +50,7 @@ class TestGraph(unittest.TestCase):
         self.assertTrue(self.g.contains_edge(edge=self.e3))
         self.assertTrue(self.g.contains_edge(edge=self.e4))
 
-        self.assertFalse(self.g.contains_edge(self.e5))
+        self.assertFalse(self.g.contains_edge(edge=self.e5))
 
     def test_get_neighbors(self):
         self.assertEqual(self.g.get_neighbors(self.v1), [self.v2, self.v3])
