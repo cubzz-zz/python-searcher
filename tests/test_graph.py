@@ -45,12 +45,12 @@ class TestGraph(unittest.TestCase):
         self.assertFalse(self.g.contains_vertex(self.v5))
 
     def test_contains_edge(self):
-        self.assertTrue(self.g.contains_edge(self.e1))
-        self.assertTrue(self.g.contains_edge(self.e2))
-        self.assertTrue(self.g.contains_edge(self.e3))
-        self.assertTrue(self.g.contains_edge(self.e4))
+        self.assertTrue(self.g.contains_edge(edge=self.e1))
+        self.assertTrue(self.g.contains_edge(edge=self.e2))
+        self.assertTrue(self.g.contains_edge(edge=self.e3))
+        self.assertTrue(self.g.contains_edge(edge=self.e4))
 
-        self.assertFalse(self.g.contains_edge(self.e5))
+        self.assertFalse(self.g.contains_edge(edge=self.e5))
 
     def test_get_neighbors(self):
         self.assertEqual(self.g.get_neighbors(self.v1), [self.v2, self.v3])
