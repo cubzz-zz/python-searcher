@@ -2,23 +2,17 @@ from tkinter import *
 
 root = Tk("My Searcher App")
 
-topFrame = Frame(root)
-topFrame.pack()
-bottomFrame = Frame(root)
-bottomFrame.pack(side=BOTTOM)
+labels = list()
 
-top_buttons = list()
-bot_buttons = list()
+label_1 = Label(root, text="name")
+label_2 = Label(root, text="password")
+entry_1 = Entry(root)
+entry_2 = Entry(root)
 
-top_buttons.append(Label(topFrame, text="Click 1", fg="red", bg="red"))
-top_buttons.append(Label(topFrame, text="Click 2", fg="blue", bg="blue"))
-top_buttons.append(Label(topFrame, text="Click 3", fg="green", bg="green"))
-bot_buttons.append(Label(bottomFrame, text="Click 4", fg="purple"))
-
-for b in top_buttons:
-    b.pack(side=LEFT, fill=X)
-for b in bot_buttons:
-    b.pack(side=BOTTOM)
+label_1.grid(row=0)
+label_2.grid(row=1)
+entry_1.grid(row=0, column=1)
+entry_2.grid(row=1, column=2)
 
 if __name__ == '__main__':
     root.mainloop()
