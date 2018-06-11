@@ -1,5 +1,6 @@
 from src.edge import Edge
 from src.vertex import Vertex
+import os
 
 
 class Graph:
@@ -61,7 +62,7 @@ class Graph:
                 return e
 
     def read_from_file(self, filename):
-        f = open('C:\\Users\\benle\\PycharmProjects\\Searcher\\' + filename, 'r')
+        f = open(os.getcwd() + "\\" + filename, 'r')
         for line in f:
             print(line[3])
             self.add_edge(Edge(Vertex(line[1]), Vertex(line[2]), int(line[3])))
